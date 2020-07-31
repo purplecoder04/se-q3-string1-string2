@@ -55,4 +55,4 @@ https://code.visualstudio.com/docs/python/testing#_test-discovery
 - Test name pattern is `test*`
 
 ## Submitting your work
-To submit your solution for grading, you will need to create a git Pull Request (PR).Refer to the `PR Workflow` article in your course content for details.
+To submit your solution for grading, you will need to create a github [Pull Request (PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).  Refer to the `PR Workflow` article in your course content for details.
