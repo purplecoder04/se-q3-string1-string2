@@ -10,6 +10,7 @@ __author__ = 'madarp'
 import sys
 import unittest
 import importlib
+import subprocess
 
 # Kenzie devs: change this to 'soln.string1' to test solution
 PKG_NAME = 'string1'
@@ -55,6 +56,11 @@ class TestString1(unittest.TestCase):
         self.assertEqual(mix_up('dog', 'dinner'), 'dig donner')
         self.assertEqual(mix_up('gnash', 'sport'), 'spash gnort')
         self.assertEqual(mix_up('pezzy', 'firm'), 'fizzy perm')
+
+    def test_flake8(self):
+        """Checking for PEP8/flake8 compliance"""
+        result = subprocess.run(['flake8', self.module.__file__])
+        self.assertEqual(result.returncode, 0)
 
 
 if __name__ == '__main__':
