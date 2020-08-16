@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Erica best "
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +23,12 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) < 3:
+        return s
+    elif s[-3:] == "ing":
+        return s + 'ly'
+    else:
+        return s + "ing"
 
 
 # E. not_bad
@@ -37,9 +41,12 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
-
+    find_not = s.find("not")
+    find_bad = s.find("bad")
+    if find_not < find_bad:
+        return s.replace(s[find_not:find_bad + 3], "good")
+    else:
+        return s
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -52,12 +59,28 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    count_a = len(a)
+    count_b = len(b)
 
+    if count_a % 2 == 0:
+        mid_a = count_a // 2
+    else:
+        mid_a = count_a // 2 + 1
+    if count_b % 2 == 0:
+        mid_b = count_b // 2
+    else:
+        mid_b = count_b // 2 + 1
+    front_a = a[:mid_a]
+    back_a = a[mid_a:]
+    front_b = b[:mid_b]
+    back_b = b[mid_b:]
+    whole = front_a + front_b + back_a + back_b
+    return whole
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
